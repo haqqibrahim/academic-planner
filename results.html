@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - Academic Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="results.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="./clu logo.jpg" alt="Logo"></a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./profile.html">Profile</a></li>
+                    <li><a href="./courses.html">Courses</a></li>
+                    <li><a href="#">Results</a></li>
+                    <li><a href="./news.html">News and Events</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="results-main">
+        <div class="container">
+            <h1>Student Results</h1>
+            <p>Access your academic results below.</p>
+
+            <form id="results-form">
+                <div class="form-group">
+                    <label for="matric-number">Matric Number:</labeL>
+                    <input type="text" id="matric-number" name="CLU200225-469" placeholder="Enter your matric number" required>
+                </div>
+                <div class="form-group">
+                    <label for="academic-level">Academic Level:</label>
+                    <select id="academic-level" name="academic-level" required>
+                        <option value="" disabled selected>Select your academic level</option>
+                        <option value="100">100 Level</option>
+                        <option value="200">200 Level</option>
+                        <option value="300">300 Level</option>
+                        <option value="400">400 Level</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="semester">Semester:</label>
+                    <select id="semester" name="semester" required>
+                        <option value="" disabled selected>Select your semester</option>
+                        <option value="1">First Semester</option>
+                        <option value="2">Second Semester</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">View Results</button>
+            </form>
+
+            <div id="results-table-container" class="results-table-container">
+                <!-- Results will be displayed here -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Chrisland University. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="results.js"></script>
+</body>
+
+</html>

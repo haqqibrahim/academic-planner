@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planner - Academic Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Header styling for consistency */
+        .header {
+            background-color: #683b70;
+            color: white;
+            padding: 15px 0;
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .logo img {
+            height: 60px;
+        }
+        .header .nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+        .header .nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+        .header .nav ul li a:hover {
+            background-color: #532a56;
+            border-radius: 5px;
+        }
+
+        .planner-main {
+            padding: 20px;
+        }
+        .planner-main h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .planner-section {
+            margin-bottom: 20px;
+        }
+        .planner-section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .timetable-table, .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .timetable-table th, .timetable-table td, .results-table th, .results-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .timetable-table th, .results-table th {
+            background-color: #f4f4f4;
+            text-align: left;
+        }
+        .btn {
+            background-color: #683b70;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #532a56;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="./clu logo.jpg" alt="Logo"></a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Results</a></li>
+                    <li><a href="#">Planner</a></li>
+                    <li><a href="#">News and Events</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="planner-main">
+        <div class="planner-section">
+            <h1>Academic Planner</h1>
+            <div class="section timetable-section">
+                <h2>Timetable</h2>
+                <table class="timetable-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>8:00 - 10:00</th>
+                            <th>10:00 - 12:00</th>
+                            <th>12:00 - 2:00</th>
+                            <th>2:00 - 4:00</th>
+                            <th>4:00 - 6:00</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>CSC101</td>
+                            <td>Free</td>
+                            <td>MTH102</td>
+                            <td>CSC102</td>
+                            <td>Free</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>Free</td>
+                            <td>CSC103</td>
+                            <td>Free</td>
+                            <td>CSC104</td>
+                            <td>Free</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>Free</td>
+                            <td>Free</td>
+                            <td>Free</td>
+                            <td>CSC105</td>
+                            <td>Free</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>CSC106</td>
+                            <td>Free</td>
+                            <td>CSC107</td>
+                            <td>Free</td>
+                            <td>Free</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>Free</td>
+                            <td>Free</td>
+                            <td>Free</td>
+                            <td>Free</td>
+                            <td>Free</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section results-section">
+                <h2>View Your Results</h2>
+                <button id="view-results-btn" class="btn">View Results</button>
+                <div id="results-container"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Chrisland University. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sample data (in a real application, this data might come from an API or database)
+            const resultsData = [
+                { subject: 'Introduction to Computer Science (CSC101)', grade: 'A' },
+                { subject: 'Calculus for Scientists (MTH102)', grade: 'B+' },
+                { subject: 'Data Structures (CSC102)', grade: 'A-' },
+                { subject: 'Algorithms (CSC103)', grade: 'B' }
+            ];
+
+            // Get elements
+            const viewResultsBtn = document.getElementById('view-results-btn');
+            const resultsContainer = document.getElementById('results-container');
+
+            // Function to render results
+            function renderResults() {
+                // Clear previous results
+                resultsContainer.innerHTML = '';
+
+                // Create and append result elements
+                const table = document.createElement('table');
+                table.className = 'results-table';
+                const thead = document.createElement('thead');
+                const tbody = document.createElement('tbody');
+
+                // Create table headers
+                const headerRow = document.createElement('tr');
+                const headers = ['Subject', 'Grade'];
+                headers.forEach(headerText => {
+                    const th = document.createElement('th');
+                    th.textContent = headerText;
+                    headerRow.appendChild(th);
+                });
+                thead.appendChild(headerRow);
+
+                // Create table rows for each result
+                resultsData.forEach(result => {
+                    const row = document.createElement('tr');
+                    Object.values(result).forEach(text => {
+                        const td = document.createElement('td');
+                        td.textContent = text;
+                        row.appendChild(td);
+                    });
+                    tbody.appendChild(row);
+                });
+
+                table.appendChild(thead);
+                table.appendChild(tbody);
+                resultsContainer.appendChild(table);
+            }
+
+            // Add event listener to button
+            viewResultsBtn.addEventListener('click', function() {
+                renderResults();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./coursess.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="./clu logo.jpg" alt="Logo"></a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="./homepagee.html">Home</a></li>
+                    <li><a href="./profile.html">Profile</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="./results.html">Results</a></li>
+                    <li><a href="./news.html">News & Events</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="courses-main">
+        <div class="container">
+            <div class="courses-header">
+                <h1>Available Courses</h1>
+                <div class="search-bar">
+                    <input type="text" id="course-search" placeholder="Search for courses...">
+                    <button type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div class="courses-content">
+                <div class="course-filter">
+                    <h2>Filter by Department</h2>
+                    <select id="department-filter">
+                        <option value="all">All Departments</option>
+                        <option value="cs">Computer Science</option>
+                        <option value="math">Mathematics</option>
+                        <option value="phy">Physics</option>
+                        <option value="chem">Chemistry</option>
+                        <option value="bio">Biology</option>
+                    </select>
+                </div>
+                <div class="course-list">
+                    <div class="course-item">
+                        <h3>Introduction to Computer Science</h3>
+                        <p><strong>Department:</strong> Computer Science</p>
+                        <p><strong>Credits:</strong> 3</p>
+                        <p><strong>Description:</strong> An introductory course covering the basics of computer science and programming.</p>
+                        <a href="#" class="enroll-btn">Enroll Now</a>
+                    </div>
+                    <div class="course-item">
+                        <h3>Calculus I</h3>
+                        <p><strong>Department:</strong> Mathematics</p>
+                        <p><strong>Credits:</strong> 4</p>
+                        <p><strong>Description:</strong> A comprehensive course on differential and integral calculus.</p>
+                        <a href="#" class="enroll-btn">Enroll Now</a>
+                    </div>
+                    <div class="course-item">
+                        <h3>General Physics</h3>
+                        <p><strong>Department:</strong> Physics</p>
+                        <p><strong>Credits:</strong> 4</p>
+                        <p><strong>Description:</strong> An introductory course on classical mechanics, thermodynamics, and electromagnetism.</p>
+                        <a href="#" class="enroll-btn">Enroll Now</a>
+                    </div>
+                    <div class="course-item">
+                        <h3>Organic Chemistry</h3>
+                        <p><strong>Department:</strong> Chemistry</p>
+                        <p><strong>Credits:</strong> 3</p>
+                        <p><strong>Description:</strong> A study of the structure, properties, and reactions of organic compounds.</p>
+                        <a href="#" class="enroll-btn">Enroll Now</a>
+                    </div>
+                    <div class="course-item">
+                        <h3>Biology of Cells</h3>
+                        <p><strong>Department:</strong> Biology</p>
+                        <p><strong>Credits:</strong> 3</p>
+                        <p><strong>Description:</strong> An exploration of the structure and function of cells, including molecular biology.</p>
+                        <a href="#" class="enroll-btn">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Chrisland University. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

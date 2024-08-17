@@ -1,0 +1,120 @@
+/* Header Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+header {
+    background-color: #683b70;
+    color: white;
+    padding: 15px 0;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Add padding to the container */
+}
+
+.header .logo {
+    margin-right: auto; /* Ensure space between the logo and navigation */
+}
+
+.header .logo img {
+    height: 60px;
+}
+
+.header .nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.header .nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.header .nav ul li a:hover {
+    background-color: #4c2956;
+    border-radius: 5px;
+}
+
+
+/* Main Content Styling */
+.results-main {
+    padding: 40px 0;
+}
+
+.results-main h1 {
+    color: #683b70;
+    font-size: 28px;
+    text-align: center;
+}
+
+.results-main p {
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #683b70;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #683b70;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #4c2956;
+}
+
+.results-table-container {
+    margin-top: 40px;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #683b70;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

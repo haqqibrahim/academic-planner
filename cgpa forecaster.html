@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Forecaster</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>CGPA Forecaster</h2>
+        <label for="gpa">Current GPA:</label>
+        <input type="number" id="gpa" step="0.01" placeholder="Enter current GPA">
+        
+        <label for="cgpa">Current CGPA:</label>
+        <input type="number" id="cgpa" step="0.01" placeholder="Enter current CGPA">
+        
+        <label for="level">Academic Level:</label>
+        <select id="level">
+            <option value="100">100 Level</option>
+            <option value="200">200 Level</option>
+            <option value="300">300 Level</option>
+            <option value="400">400 Level</option>
+            <option value="500">500 Level</option>
+        </select>
+        
+        <label for="semester">Current Semester:</label>
+        <select id="semester">
+            <option value="1">1st Semester</option>
+            <option value="2">2nd Semester</option>
+        </select>
+        
+        <label for="semesters">Total Number of Semesters:</label>
+        <input type="number" id="semesters" placeholder="Enter total semesters">
+        
+        <label for="forecast">Desired Classification:</label>
+        <select id="forecast">
+            <option value="4.5">1st Class</option>
+            <option value="3.5">2nd Class Upper</option>
+            <option value="2.5">2nd Class Lower</option>
+        </select>
+        
+        <button onclick="calculateForecast()">Forecast Result</button>
+        
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        function calculateForecast() {
+            const gpa = parseFloat(document.getElementById('gpa').value);
+            const cgpa = parseFloat(document.getElementById('cgpa').value);
+            const level = parseInt(document.getElementById('level').value);
+            const semester = parseInt(document.getElementById('semester').value);
+            const totalSemesters = parseInt(document.getElementById('semesters').value);
+            const desired = parseFloat(document.getElementById('forecast').value);
+            
+            if (isNaN(gpa) || isNaN(cgpa) || isNaN(level) || isNaN(semester) || isNaN(totalSemesters) || isNaN(desired)) {
+                alert("Please fill out all fields correctly.");
+                return;
+            }
+
+            // Calculate current number of semesters completed
+            const currentSemestersCompleted = ((level - 100) * 2) + semester;
+            
+            // Calculate remaining semesters
+            const remainingSemesters = totalSemesters - currentSemestersCompleted;
+            
+            // Calculate the required GPA for each of the remaining semesters
+            const requiredGPA = ((desired * totalSemesters) - (cgpa * currentSemestersCompleted)) / remainingSemesters;
+            
+            let message = `To achieve a ${desired >= 4.5 ? "1st Class" : desired >= 3.5 ? "2nd Class Upper" : "2nd Class Lower"}, 
+                          you should aim to get a GPA of ${requiredGPA.toFixed(2)} in each of the remaining semester(s).`;
+
+            if (requiredGPA > 5.0) {
+                message = "It's not possible to reach the desired classification with the current GPA and CGPA.";
+            }
+
+            document.getElementById('result').innerText = message;
+        }
+    </script>
+</body>
+</html>

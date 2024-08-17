@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Timetable</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./timetable.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="clu-logo.jpg" alt="Logo"></a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Results</a></li>
+                    <li><a href="#">Planner</a></li>
+                    <li><a href="#">News & Events</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="timetable-main">
+        <div class="container">
+            <div class="timetable-header">
+                <h1>Class Timetable</h1>
+                <div class="term-selector">
+                    <select id="term-select">
+                        <option value="spring">Spring Term</option>
+                        <option value="summer">Summer Term</option>
+                        <option value="fall">Fall Term</option>
+                        <option value="winter">Winter Term</option>
+                    </select>
+                </div>
+            </div>
+            <div class="timetable-content">
+                <table class="timetable">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>8:00 AM - 9:00 AM</td>
+                            <td class="class-item">Intro to CS<br>Room 101</td>
+                            <td></td>
+                            <td class="class-item">Calculus I<br>Room 203</td>
+                            <td></td>
+                            <td class="class-item">General Physics<br>Room 105</td>
+                        </tr>
+                        <tr>
+                            <td>9:00 AM - 10:00 AM</td>
+                            <td class="class-item">Organic Chemistry<br>Room 202</td>
+                            <td class="class-item">Biology of Cells<br>Room 301</td>
+                            <td></td>
+                            <td class="class-item">Intro to CS<br>Room 101</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10:00 AM - 11:00 AM</td>
+                            <td></td>
+                            <td></td>
+                            <td class="class-item">General Physics<br>Room 105</td>
+                            <td class="class-item">Organic Chemistry<br>Room 202</td>
+                            <td class="class-item">Calculus I<br>Room 203</td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Covenant University. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
