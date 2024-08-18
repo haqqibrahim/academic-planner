@@ -43,6 +43,70 @@
                             <li><a href="#"><i class="fas fa-book"></i> Algorithms (CSC103)</a></li>
                         </ul>
                     </div>
+                    <div class="section cgpa-forecaster-section">
+                        <h2>CGPA Forecaster</h2>
+                        <div class="cgpa-forecaster">
+                            <form id="cgpa-form">
+                                <div class="form-group">
+                                    <label for="current-gpa">Current GPA:</label>
+                                    <input type="number" id="current-gpa" name="current-gpa" step="0.01" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="current-cgpa">Current CGPA:</label>
+                                    <input type="number" id="current-cgpa" name="current-cgpa" step="0.01" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="completed-credits">Completed Credits:</label>
+                                    <input type="number" id="completed-credits" name="completed-credits" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="remaining-credits">Remaining Credits:</label>
+                                    <input type="number" id="remaining-credits" name="remaining-credits" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="total-semesters">Total Semesters:</label>
+                                    <input type="number" id="total-semesters" name="total-semesters" required>
+                                </div>
+                                <button type="submit" class="btn">Forecast CGPA</button>
+                            </form>
+                            <div id="forecast-result" class="forecast-result">
+                                <!-- Result will be displayed here -->
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Existing Sections -->
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2024 Chrisland University. All rights reserved.</p>
+            </div>
+        </footer>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const form = document.getElementById('cgpa-form');
+                const resultDiv = document.getElementById('forecast-result');
+    
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault();
+    
+                    const currentGPA = parseFloat(document.getElementById('current-gpa').value);
+                    const currentCGPA = parseFloat(document.getElementById('current-cgpa').value);
+                    const completedCredits = parseInt(document.getElementById('completed-credits').value, 10);
+                    const remainingCredits = parseInt(document.getElementById('remaining-credits').value, 10);
+                    const totalSemesters = parseInt(document.getElementById('total-semesters').value, 10);
+    
+                    // Simple forecast calculation
+                    const totalCredits = completedCredits + remainingCredits;
+                    const projectedCGPA = ((currentCGPA * completedCredits) + (currentGPA * remainingCredits)) / totalCredits;
+    
+                    resultDiv.innerHTML = `<p><strong>Projected CGPA:</strong> ${projectedCGPA.toFixed(2)}</p>`;
+                });
+            });
+        </script>
                     <div class="courses-overview">
                         <h3>Course Overview</h3>
                         <p>Access detailed course materials, assignments, and lecture notes. Stay updated on all your courses in one place.</p>
@@ -175,7 +239,7 @@
                         <li><a href="#"><i class="fas fa-tasks"></i> To-Do List</a></li>
                         <li><a href="#"><i class="fas fa-chart-line"></i> Progress Tracker</a></li>
                     </ul>
-                    <a href="#" class="btn">Go to Planner</a>
+                    <a href="./planner.html" class="btn">Go to Planner</a>
                 </div>
             </div>
         </div>

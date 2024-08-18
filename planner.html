@@ -3,80 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planner - Academic Planner</title>
+    <title>View Planner - Academic Planner</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="plannerrr.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        /* Header styling for consistency */
-        .header {
-            background-color: #683b70;
-            color: white;
-            padding: 15px 0;
-        }
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header .logo img {
-            height: 60px;
-        }
-        .header .nav ul {
-            list-style-type: none;
-            display: flex;
-            gap: 20px;
-        }
-        .header .nav ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 5px 10px;
-            transition: background-color 0.3s;
-        }
-        .header .nav ul li a:hover {
-            background-color: #532a56;
-            border-radius: 5px;
-        }
-
-        .planner-main {
-            padding: 20px;
-        }
-        .planner-main h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .planner-section {
-            margin-bottom: 20px;
-        }
-        .planner-section h2 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        .timetable-table, .results-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        .timetable-table th, .timetable-table td, .results-table th, .results-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-        .timetable-table th, .results-table th {
-            background-color: #f4f4f4;
-            text-align: left;
-        }
-        .btn {
-            background-color: #683b70;
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        .btn:hover {
-            background-color: #532a56;
-        }
-    </style>
 </head>
 <body>
     <header class="header">
@@ -86,147 +16,225 @@
             </div>
             <nav class="nav">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">Courses</a></li>
-                    <li><a href="#">Results</a></li>
-                    <li><a href="#">Planner</a></li>
-                    <li><a href="#">News and Events</a></li>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./profile.html">Profile</a></li>
+                    <li><a href="./courses.html">Courses</a></li>
+                    <li><a href="./results.html">Results</a></li>
+                    <li><a href="./news.html">News and Events</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
     <main class="planner-main">
-        <div class="planner-section">
+        <div class="container">
             <h1>Academic Planner</h1>
-            <div class="section timetable-section">
-                <h2>Timetable</h2>
-                <table class="timetable-table">
-                    <thead>
-                        <tr>
-                            <th>Day</th>
-                            <th>8:00 - 10:00</th>
-                            <th>10:00 - 12:00</th>
-                            <th>12:00 - 2:00</th>
-                            <th>2:00 - 4:00</th>
-                            <th>4:00 - 6:00</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Monday</td>
-                            <td>CSC101</td>
-                            <td>Free</td>
-                            <td>MTH102</td>
-                            <td>CSC102</td>
-                            <td>Free</td>
-                        </tr>
-                        <tr>
-                            <td>Tuesday</td>
-                            <td>Free</td>
-                            <td>CSC103</td>
-                            <td>Free</td>
-                            <td>CSC104</td>
-                            <td>Free</td>
-                        </tr>
-                        <tr>
-                            <td>Wednesday</td>
-                            <td>Free</td>
-                            <td>Free</td>
-                            <td>Free</td>
-                            <td>CSC105</td>
-                            <td>Free</td>
-                        </tr>
-                        <tr>
-                            <td>Thursday</td>
-                            <td>CSC106</td>
-                            <td>Free</td>
-                            <td>CSC107</td>
-                            <td>Free</td>
-                            <td>Free</td>
-                        </tr>
-                        <tr>
-                            <td>Friday</td>
-                            <td>Free</td>
-                            <td>Free</td>
-                            <td>Free</td>
-                            <td>Free</td>
-                            <td>Free</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <div class="planner-content">
+                <div class="section exams-section">
+                    <h2>Upcoming Exams</h2>
+                    <ul class="exams-list">
+                        <li><i class="fas fa-calendar-alt"></i> CSC101 - August 22, 2024</li>
+                        <li><i class="fas fa-calendar-alt"></i> MTH102 - August 24, 2024</li>
+                        <li><i class="fas fa-calendar-alt"></i> CSC102 - August 26, 2024</li>
+                    </ul>
+                    <a href="#" class="btn" id="addExamBtn">Add New Exam</a>
+                </div>
 
-            <div class="section results-section">
-                <h2>View Your Results</h2>
-                <button id="view-results-btn" class="btn">View Results</button>
-                <div id="results-container"></div>
+                <div class="section assignments-section">
+                    <h2>Assignment Deadlines</h2>
+                    <ul class="assignments-list">
+                        <li><i class="fas fa-calendar-check"></i> Data Structures Assignment - August 20, 2024</li>
+                        <li><i class="fas fa-calendar-check"></i> Algorithms Assignment - August 23, 2024</li>
+                        <li><i class="fas fa-calendar-check"></i> Calculus Homework - August 25, 2024</li>
+                    </ul>
+                    <a href="#" class="btn" id="addAssignmentBtn">Add New Assignment</a>
+                </div>
+
+                <div class="section todo-section">
+                    <h2>To-Do List</h2>
+                    <ul class="todo-list">
+                        <li><i class="fas fa-tasks"></i> Complete Project Report</li>
+                        <li><i class="fas fa-tasks"></i> Review Lecture Notes</li>
+                        <li><i class="fas fa-tasks"></i> Prepare for CSC101 Exam</li>
+                    </ul>
+                    <a href="#" class="btn" id="addTaskBtn">Add New Task</a>
+                </div>
+
+                <div class="section progress-section">
+                    <h2>Progress Tracker</h2>
+                    <div class="progress-summary">
+                        <div class="progress-item">
+                            <label for="current-progress">Current Progress:</label>
+                            <input type="text" id="current-progress" value="75%">
+                        </div>
+                        <div class="progress-item">
+                            <label for="target-progress">Target Progress:</label>
+                            <input type="text" id="target-progress" value="90%">
+                        </div>
+                    </div>
+                    <a href="#" class="btn" id="updateProgressBtn">Update Progress</a>
+                </div>
             </div>
         </div>
     </main>
-
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 Chrisland University. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Modal Structure -->
+    <div id="examModal" class="modal">
+        <div class="modal-content">
+            <h3>Add New Exam</h3>
+            <form>
+                <label for="exam-name">Exam Name:</label>
+                <input type="text" id="exam-name">
+                <label for="exam-date">Exam Date:</label>
+                <input type="date" id="exam-date">
+                <button type="submit" class="btn">Add Exam</button>
+                <button type="button" class="btn cancel-btn" id="closeExamModal">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="assignmentModal" class="modal">
+        <div class="modal-content">
+            <h3>Add New Assignment</h3>
+            <form>
+                <label for="assignment-name">Assignment Name:</label>
+                <input type="text" id="assignment-name">
+                <label for="assignment-date">Due Date:</label>
+                <input type="date" id="assignment-date">
+                <button type="submit" class="btn">Add Assignment</button>
+                <button type="button" class="btn cancel-btn" id="closeAssignmentModal">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <h3>Add New Task</h3>
+            <form>
+                <label for="task-name">Task Name:</label>
+                <input type="text" id="task-name">
+                <button type="submit" class="btn">Add Task</button>
+                <button type="button" class="btn cancel-btn" id="closeTaskModal">Cancel</button>
+            </form>
+        </div>
+    </div>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Sample data (in a real application, this data might come from an API or database)
-            const resultsData = [
-                { subject: 'Introduction to Computer Science (CSC101)', grade: 'A' },
-                { subject: 'Calculus for Scientists (MTH102)', grade: 'B+' },
-                { subject: 'Data Structures (CSC102)', grade: 'A-' },
-                { subject: 'Algorithms (CSC103)', grade: 'B' }
-            ];
+        document.addEventListener('DOMContentLoaded', function () {
+            // Modal Elements
+            const examModal = document.getElementById('examModal');
+            const assignmentModal = document.getElementById('assignmentModal');
+            const taskModal = document.getElementById('taskModal');
+            
+            const closeExamModal = document.getElementById('closeExamModal');
+            const closeAssignmentModal = document.getElementById('closeAssignmentModal');
+            const closeTaskModal = document.getElementById('closeTaskModal');
 
-            // Get elements
-            const viewResultsBtn = document.getElementById('view-results-btn');
-            const resultsContainer = document.getElementById('results-container');
+            const addExamBtn = document.getElementById('addExamBtn');
+            const addAssignmentBtn = document.getElementById('addAssignmentBtn');
+            const addTaskBtn = document.getElementById('addTaskBtn');
 
-            // Function to render results
-            function renderResults() {
-                // Clear previous results
-                resultsContainer.innerHTML = '';
-
-                // Create and append result elements
-                const table = document.createElement('table');
-                table.className = 'results-table';
-                const thead = document.createElement('thead');
-                const tbody = document.createElement('tbody');
-
-                // Create table headers
-                const headerRow = document.createElement('tr');
-                const headers = ['Subject', 'Grade'];
-                headers.forEach(headerText => {
-                    const th = document.createElement('th');
-                    th.textContent = headerText;
-                    headerRow.appendChild(th);
-                });
-                thead.appendChild(headerRow);
-
-                // Create table rows for each result
-                resultsData.forEach(result => {
-                    const row = document.createElement('tr');
-                    Object.values(result).forEach(text => {
-                        const td = document.createElement('td');
-                        td.textContent = text;
-                        row.appendChild(td);
-                    });
-                    tbody.appendChild(row);
-                });
-
-                table.appendChild(thead);
-                table.appendChild(tbody);
-                resultsContainer.appendChild(table);
-            }
-
-            // Add event listener to button
-            viewResultsBtn.addEventListener('click', function() {
-                renderResults();
+            // Open modals
+            addExamBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+                examModal.style.display = 'block';
             });
+
+            addAssignmentBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+                assignmentModal.style.display = 'block';
+            });
+
+            addTaskBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+                taskModal.style.display = 'block';
+            });
+
+            // Close modals
+            closeExamModal.addEventListener('click', function () {
+                examModal.style.display = 'none';
+            });
+
+            closeAssignmentModal.addEventListener('click', function () {
+                assignmentModal.style.display = 'none';
+            });
+
+            closeTaskModal.addEventListener('click', function () {
+                taskModal.style.display = 'none';
+            });
+
+            // Add new items to lists
+            document.querySelector('#examModal form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                const examName = document.getElementById('exam-name').value;
+                const examDate = document.getElementById('exam-date').value;
+                const examsList = document.querySelector('.exams-list');
+                const newItem = document.createElement('li');
+                newItem.innerHTML = `<i class="fas fa-calendar-alt"></i> ${examName} - ${examDate}`;
+                examsList.appendChild(newItem);
+                examModal.style.display = 'none';
+                event.target.reset();
+            });
+
+            document.querySelector('#assignmentModal form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                const assignmentName = document.getElementById('assignment-name').value;
+                const assignmentDate = document.getElementById('assignment-date').value;
+                const assignmentsList = document.querySelector('.assignments-list');
+                const newItem = document.createElement('li');
+                newItem.innerHTML = `<i class="fas fa-calendar-check"></i> ${assignmentName} - ${assignmentDate}`;
+                assignmentsList.appendChild(newItem);
+                assignmentModal.style.display = 'none';
+                event.target.reset();
+            });
+
+            document.querySelector('#taskModal form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                const taskName = document.getElementById('task-name').value;
+                const todoList = document.querySelector('.todo-list');
+                const newItem = document.createElement('li');
+                newItem.innerHTML = `<i class="fas fa-tasks"></i> ${taskName}`;
+                todoList.appendChild(newItem);
+                taskModal.style.display = 'none';
+                event.target.reset();
+            });
+
+            // Update Progress
+            document.getElementById('updateProgressBtn').addEventListener('click', function (event) {
+                event.preventDefault();
+                const currentProgressElement = document.getElementById('current-progress');
+                const targetProgressElement = document.getElementById('target-progress');
+
+                let currentProgress = parseInt(currentProgressElement.value.replace('%', ''));
+                const targetProgress = parseInt(targetProgressElement.value.replace('%', ''));
+
+                if (currentProgress < targetProgress) {
+                    currentProgress += 5; // Increment progress by 5%
+                    if (currentProgress > targetProgress) {
+                        currentProgress = targetProgress;
+                    }
+                    currentProgressElement.value = currentProgress + '%';
+                } else {
+                    alert('You have already reached or exceeded your target progress!');
+                }
+            });
+
+            // Close modals when clicking outside
+            window.onclick = function (event) {
+                if (event.target == examModal) {
+                    examModal.style.display = 'none';
+                }
+                if (event.target == assignmentModal) {
+                    assignmentModal.style.display = 'none';
+                }
+                if (event.target == taskModal) {
+                    taskModal.style.display = 'none';
+                }
+            };
         });
     </script>
 </body>
